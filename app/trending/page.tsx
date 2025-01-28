@@ -90,10 +90,6 @@ export default function TrendingPage() {
                       <Eye className="w-4 h-4 mr-1" />
                       <span>{item.views?.toLocaleString()}</span>
                     </div>
-                    <div className="flex items-center text-gray-400">
-                      <ThumbsUp className="w-4 h-4 mr-1" />
-                      <span>{item.likes?.toLocaleString()}</span>
-                    </div>
                   </div>
                 </div>
               </div>
