@@ -218,7 +218,7 @@ export default function ResourcePage() {
             <div className="flex items-center gap-3 mb-2">
               <h1 className="text-2xl font-bold text-white">{resource.title}</h1>
               <Badge variant="secondary" className="bg-[#1a2332] text-[#4cc38a]">
-                DevOps
+                {resource.tags[0]}
               </Badge>
             </div>
             <div className="flex items-center gap-4 text-gray-400 text-sm">
