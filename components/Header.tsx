@@ -66,7 +66,9 @@ export function Header({ isFakeButton, onSearchResults, showSearch = false, load
   const handleSignOut = () => {
     clearAccount()
     setLocalIsAuthenticated(false)
-    router.push('/')
+    
+    window.location.pathname = '/'
+    window.localStorage.reload()
   }
 
   return (
