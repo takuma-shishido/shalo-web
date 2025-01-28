@@ -91,55 +91,57 @@ export function Header({ isFakeButton, onSearchResults, showSearch = false, load
           )}
           <div className="flex items-center space-x-4">
             {(localIsAuthenticated || isFakeButton) ? (
-            <>
-              <Link href="/create-resource">
-                <Button variant="default" className="bg-[#4cc38a] hover:bg-[#3da671] text-white" disabled={isFakeButton}>
-                  Create Resource
-                </Button>
-              </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="text-gray-300 hover:text-white" disabled={isFakeButton}>
-                    <User className="h-5 w-5 mr-2" />
-                    Account
+              <>
+                <Link href="/create-resource">
+                  <Button variant="default" className="bg-[#4cc38a] hover:bg-[#3da671] text-white" disabled={isFakeButton}>
+                    Create Resource
                   </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-[#1a2332] border-gray-700">
-                  <DropdownMenuItem asChild>
-                    <Link href="/account" className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
+                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="text-gray-300 hover:text-white" disabled={isFakeButton}>
+                      <User className="h-5 w-5 mr-2" />
                       Account
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
-                    <Link href="/account/settings" className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
-                      Settings
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={handleSignOut} className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
-                    Sign Out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-[#1a2332] border-gray-700">
+                    <DropdownMenuItem asChild>
+                      <Link href="/account" className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
+                        Account
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/account/settings" className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
+                        Settings
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="" onClick={handleSignOut} className="text-gray-300 focus:bg-[#2d3c54] focus:text-white">
+                        Sign Out
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </>
             ) : (
-            <>
-              <Button
-                variant="outline"
-                className="border-[#4cc38a] text-[#4cc38a] hover:bg-[#2d3c54]"
-                onClick={() => setIsSignInModalOpen(true)}
-                disabled={loading}
-              >
-                Sign In
-              </Button>
-              <Button
-                variant="default"
-                className="bg-[#4cc38a] hover:bg-[#3da671] text-white"
-                onClick={() => setIsSignUpModalOpen(true)}
-                disabled={loading}
-              >
-                Sign Up
-              </Button>
-            </>
+              <>
+                <Button
+                  variant="outline"
+                  className="border-[#4cc38a] text-[#4cc38a] hover:bg-[#2d3c54]"
+                  onClick={() => setIsSignInModalOpen(true)}
+                  disabled={loading}
+                >
+                  Sign In
+                </Button>
+                <Button
+                  variant="default"
+                  className="bg-[#4cc38a] hover:bg-[#3da671] text-white"
+                  onClick={() => setIsSignUpModalOpen(true)}
+                  disabled={loading}
+                >
+                  Sign Up
+                </Button>
+              </>
             )}
           </div>
         </div>
