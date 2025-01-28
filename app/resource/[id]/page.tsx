@@ -25,50 +25,6 @@ import {
 } from "@/components/ui/alert-dialog"
 import { UpdateResourceModal } from "@/components/UpdateResourceModal"
 
-const activityData = [
-  {
-    id: 1,
-    type: 'bookmark',
-    user: 'David Kim',
-    date: '1 hour ago'
-  },
-  {
-    id: 2,
-    type: 'favorite',
-    user: 'Emma Wilson',
-    date: '3 hours ago'
-  },
-  {
-    id: 3,
-    type: 'comment',
-    user: 'James Lee',
-    date: '4 hours ago'
-  }
-]
-
-const changelogData = [
-  {
-    id: 1,
-    version: '2.0',
-    date: '2024-01-15',
-    changes: [
-      'Added new section on service mesh implementation',
-      'Updated Kubernetes deployment examples',
-      'Fixed broken code snippets'
-    ]
-  },
-  {
-    id: 2,
-    version: '1.5',
-    date: '2023-12-20',
-    changes: [
-      'Added troubleshooting guide',
-      'Updated dependencies versions',
-      'Improved documentation clarity'
-    ]
-  }
-]
-
 export default function ResourcePage() {
   const params = useParams()
   const id = params.id as string
@@ -151,11 +107,10 @@ export default function ResourcePage() {
         return (
           <div className="bg-[#1a2332] rounded-lg p-6">
             <div className="space-y-4">
-              {activityData.map((activity) => (
+              {resource.activity.map((activity) => (
                 <div key={activity.id} className="flex items-center justify-between py-2 border-b border-gray-700">
                   <div className="flex items-center gap-2">
                     {activity.type === 'bookmark' && <Bookmark className="h-4 w-4 text-[#4cc38a]" />}
-                    {/* {activity.type === 'comment' && <MessageSquare className="h-4 w-4 text-[#4cc38a]" />} */}
                     <span className="text-white">{activity.user}</span>
                     <span className="text-gray-400">{activity.type}d this resource</span>
                   </div>

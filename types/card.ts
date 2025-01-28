@@ -12,5 +12,12 @@ export interface CardData {
   likes?: number;
 
   isBookmarked: boolean;
+
+  activity: {
+    id: number;
+    type: string;
+    user: string;
+    date: string;
+  }[]
 }
 
