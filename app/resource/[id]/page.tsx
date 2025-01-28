@@ -54,8 +54,7 @@ export default function ResourcePage() {
       }
     }
 
-    if (token)
-      fetchData()
+    fetchData()
   }, [id, token])
 
   useEffect(() => {
@@ -239,18 +238,20 @@ export default function ResourcePage() {
             </div>
           </div>
           <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={bookmarkHandle}
-              className={`${isBookmarked
-                ? 'bg-[#1a2332] text-[#4cc38a] border-[#4cc38a]'
-                : 'bg-[#1a2332] text-gray-400 border-gray-700'
-                }`}
-            >
-              <Bookmark className="h-4 w-4 mr-2" />
-              {isBookmarked ? 'Bookmarked' : 'Bookmark'}
-            </Button>
+            {account && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={bookmarkHandle}
+                className={`${isBookmarked
+                  ? 'bg-[#1a2332] text-[#4cc38a] border-[#4cc38a]'
+                  : 'bg-[#1a2332] text-gray-400 border-gray-700'
+                  }`}
+              >
+                <Bookmark className="h-4 w-4 mr-2" />
+                {isBookmarked ? 'Bookmarked' : 'Bookmark'}
+              </Button>
+            )}
             <Button
               variant="default"
               size="sm"
